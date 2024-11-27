@@ -1,23 +1,91 @@
-<!doctype html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<html>
-    <head>
-        <meta charset="utf-8">
-
-        <title>Blank template</title>
-
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="styles.css">
-
-    </head>
-
-    <body>
-
-        <h1>My awesome space test</h1>
-        
-        <!-- Load external JavaScript -->
-        <script src="scripts.js"></script>
-        
-    </body>
-
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <!-- maximum-scale=1.0 stopper nettleseren fra å automatisk forstørre siden når man trykker på input feltet-->
+    <title>Dag 12 Kontoret</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://julekalender2024.w3spaces.com/Bilder/Ikon.png"
+    />
+    <link rel="stylesheet" href="./Dag 12 Kontoret_files/Rom-1.css" />
+  </head>
+  <body>
+    <div id="hoved">
+      <h1 class="overskrift">Kontoret</h1>
+      <p class="forklaring">
+        Julenissen har blitt låst ute av verkstedet sitt og han har glemt hvor
+        han gjorde av koden til låsen. Finn den og skriv den inn for å komme
+        videre
+      </p>
+      <p id="tid">
+        Julenissen også sier til deg at han har glemt å bytte batteriene på
+        låsen så den går tom for strøm om 50 sekunder
+      </p>
+      <img
+        src="./Dag 12 Kontoret_files/jule-kontor.jpg"
+        class="bilde"
+        id="kodebilde"
+        alt="bilde av et kontor hvor man skal finne en kode. koden var 623125"
+        width="650px"
+        height="365px"
+      />
+      <div style="margin: 5px" id="label">
+        <label for="kode">Koden: </label>
+        <input type="text" id="kode" name="koden" />
+      </div>
+      <button id="kakaopause">Ta deg en kakao pause</button>
+    </div>
+    <div id="slutt">
+      <h1 class="overskrift">Kontoret</h1>
+      <p class="forklaring">
+        du klarte å låse opp døren og kommer deg videre inn i juleverkstedet
+      </p>
+      <img
+        src="./Dag 12 Kontoret_files/jule-kontor.jpg"
+        class="bilde"
+        alt="bilde av et kontor hvor julenissen sitter"
+        width="650px"
+        height="365px"
+      />
+      <a href="https://elvit1-blokka-78.w3spaces.com/Juleprosjekt/Rom2.html"
+        ><button>Gå videre til verkstedet.</button></a
+      >
+    </div>
+    <div id="mislykket">
+      <h1 class="overskrift">Kontoret</h1>
+      <p class="forklaring">
+        Du rakk ikke å låse opp døren før den gikk tom for strøm og julen ble
+        ødelagt. Heldighvis informerer alvene deg om at de nettop har funnet opp
+        en tidsmaskin som de lar deg bruke for å ha et nytt forsøk
+      </p>
+      <img
+        src="./Dag 12 Kontoret_files/Tidsmaskin.jpg"
+        class="bilde"
+        alt="bilde av en julekule formet som en telefonkiosk som henger fra et juletre  "
+        width="650px"
+        height="365px"
+      />
+      <button id="restart">Prøv på nytt</button>
+    </div>
+    <div id="kakao">
+      <p class="forklaring">
+        Du belønner det harde arbeidet ditt med en velfortjent kakaopause
+      </p>
+      <img
+        src="./Dag 12 Kontoret_files/Kakao.jpg"
+        class="bilde"
+        alt="bilde av en kopp med kakao og noen pepperkaker"
+        width="300px"
+        height="300px"
+      />
+      <button id="arbeid">Tilbake til arbeidet</button>
+    </div>
+    <script src="./Dag 12 Kontoret_files/Rom-1.js.last ned"></script>
+  </body>
 </html>
