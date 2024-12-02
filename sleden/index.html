@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/labyrint/styles.css">
+    <link rel="icon" type="image/x-icon" href="/media/ikon.png">
+    <link rel="stylesheet" href="/sleden/styles.css">
+    <title>Dag 12 - Sleden</title>
+</head>
+
+<body>
+    <div id="menu" class="box">
+        <h2>Start sleden!</h2>
+        <p>
+            Nå mangler det bare å få sleden i gang. Dessverre er reinsdyrene så late at de ikke får til å fly
+            på egenhånd. Derfor har alvene lagt til en motor på sleden, som desverre ikke fungerer veldig bra.
+        </p>
+        <figure>
+            <img id="deer" src="/sleden/media/deer.jpg alt="Tegning av julenissen på sleden sin med reinsdyr foran">
+            <figcaption>
+                <a href="https://www.freepik.com/free-vector/cute-deer-white-background_24466863.htm#fromView=keyword&page=1&position=0&uuid=0c695cb3-b633-44ca-9d28-f12876d0b20e">&copy;Bilde
+                    av brgfx på Freepik</a>
+            </figcaption>
+        </figure>
+        <p>
+            Klarer du å spamklikke fort nok på knappen på til å starte motoren?
+        </p>
+
+        <button onclick="startGame()" id="startBtn">Start</button>
+
+        <div id="progressGame">
+            <p id="progressCountdown">5</p>
+            <progress id="motorProgress" value="0" max="150"></progress>
+            <button onclick="changeProgress()" id="motorBtn">🔴</button>
+        </div>
+
+        <p id="startGameCountdown">3</p>
+    </div>
+
+    <div id="gameOver" class="box">
+        <h2>Du rakk ikke å trykke fort nok!</h2>
+        <figure>
+            <img src="/sleden/media/sadsanta.jpg" alt="Mann i julenissehatt som er svært misfornøyd" />
+            <figcaption> 
+                <a href="https://www.freepik.com/free-photo/bored-adult-man-wearing-glasses-santa-hat-with-scarf-around-neck-keeping-hand-chin-looking-side-isolated-purple-wall_15404252.htm#fromView=search&page=1&position=0&uuid=e6ad29fe-c226-47fa-97c4-9152b7e53076">&copy;Bilde
+                    av stockking på Freepik</a>
+                </figcaption>
+        </figure>
+        <p>Ikke beskymre deg. Heldigvis tåler maskinen flere forsøk.</p>
+        <p>Prøv på nytt, eller tilkall slav- alven din til å gjøre det for deg.</p>
+        <button onclick="startGame()">Prøv på nytt</button>
+        <button onclick="help()">Tilkall en alv</button>
+    </div>
+
+    <div id="youWon" class="box">
+        <h2>Du klarte det!</h2>
+        <p>Du fant sleden, og nå er den i gang.</p>
+        <figure>
+            <img src="/sleden/media/julenissen.jpg" alt="Tegning av julenissen på sleden sin med reinsdyr foran">
+            <figcaption>
+                <a href="https://www.freepik.com/free-vector/flat-christmas-season-celebration-background_33436637.htm#fromView=search&page=1&position=46&uuid=ccc236cc-eb22-47e2-9159-50643c85f9fb">&copy;Bilde
+                    av Freepik</a>
+            </figcaption>
+        </figure>
+
+        <a href="/sluttside"><button>Til sluttskjermen</button></a>
+    </div>
+
+    <div id="help" class="box" style="display: none;">
+        <h2>Spør om hjelp!</h2>
+        <p>Be alven så pent (eller lite pent) du ønsker om hjelp.</p>
+        <div id="beg">
+            <div>
+                <img src="/labyrint/media/santa.png"/>
+                <textarea id="helpInput" placeholder="Skriv noe..." ></textarea>
+            </div>
+            <div id="elf" style="display: none;">
+                <p>Selvfølgelig, store leder. <br> <br> <em>trykker på knappen</em></p>
+                <img src="/sleden/media/elf.png" alt="">
+            </div>
+        </div>
+        <div id="begBtn">
+            <button onclick="beg()">Be om hjelp</button>
+        </div>
+    </div>
+
+    <footer>
+        <a
+            href="https://www.freepik.com/free-photo/top-view-little-presents-with-toys_16997653.htm#fromView=search&page=1&position=1&uuid=831fe43c-2b0a-477b-9287-00b60e729877">&copy;Bakgrunnbilde
+            av KamranAydinov på Freepik</a>
+        <a
+            href="https://www.freepik.com/free-vector/smiley-santa-claus-cartoon-face-illustration_77993007.htm#fromView=search&page=1&position=0&uuid=42d58fc5-3468-48b7-a8de-4fb2316da46b">&copy;
+            Bilde av julenissen av brgfx på Freepik</a>
+        <a
+            href="https://www.freepik.com/free-vector/cute-elf-head-cartoon-character_52764274.htm#fromView=search&page=1&position=8&uuid=73ce62b3-7619-4a4b-bb33-07881873d75e">&copy;
+            Bilde av alven av brgfx på Freepik</a>
+    </footer>
+
+    <script src="/sleden/scripts.js"></script>
+</body>
+
+</html>

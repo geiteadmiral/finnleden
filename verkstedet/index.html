@@ -1,0 +1,163 @@
+
+<!doctype html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+        <title> Dag 12 - Verkstedet</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <link rel="icon" type="image/x-icon" href="/media/ikon.png">
+
+        <style> 
+            body {
+                display: flex; /*lager flexbox*/ 
+                flex-direction: column; /*objektene er plassert under hverandre, vertikalt */ 
+                align-items: center;  /*senterer objektene */
+                background-image: url("/verkstedet/Bilder/verksted.jpg");
+                font-family: "Sofia", sans-serif; 
+            }
+            h1 {
+                padding: 10px; 
+                font-size: 25px; 
+                background: rgb(255,255,255, 0.8);
+                border-radius: 7px;
+                border: solid;
+                border-color: white;  
+                border-width: 2px;
+            }
+            .container {
+                display: flex; /*lager felxbox inni container */ 
+                gap: 20px; /* mellomrom mellom objektene*/ 
+                padding: 10px; /*telefon!*/ 
+                border: solid; 
+                border-color: white; 
+                border-width: 2px; 
+                border-radius: 7px; 
+                background-color: rgb(255,255,255, 0.96); 
+                position: relative; 
+            }
+            .wire {
+                border: solid; 
+                border-color: black; 
+                border-width: 1px;
+                margin: 10px 10px 15px 10px; 
+                padding: 7px 7px 0 7px;
+                color: white; 
+                font-size: 15px; 
+                border-radius: 7px; 
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .port {
+                border: solid; 
+                border-color: black; 
+                border-width: 1px;
+                margin: 10px 10px 14px 10px; 
+                padding: 7px 7px 0 7px;
+                color: white; 
+                font-size: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            #rood-ledning, #rood-port {
+                cursor: pointer;  
+            } 
+            #grnn-ledning, #grnn-port {
+                cursor: pointer;
+            }
+            #blaa-ledning, #blaa-port {
+                cursor: pointer;  
+            }
+            .highlight {
+                border-color: yellow;
+                border-width: 3px; 
+            }
+            #boks {
+                display: none; 
+                border-radius: 7px; 
+                border-color: white; 
+                background: rgb(255,255,255, 0.8);
+                font-size: 25px; 
+                position: absolute; 
+                top: 50%; 
+                left: 50%;
+                transform: translate(-50%, -50%); 
+                padding: 10px 20px 20px 20px; 
+                
+            }
+            button {
+                border-color: #b30d9a;
+                border-radius: 7px; 
+                background-color: white;
+                font-family: "Sofia", sans-serif; 
+                font-size: 20px; 
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            img {
+                line-height: 0; 
+                width: 120px; 
+                height: auto; 
+            }
+        </style>
+    </head> 
+
+    <body>
+        <h1 id ="overskrift"> Gavemaskinen er ødelagt! Match riktig bilder for å fikse den!</h1>
+
+        <div class = "container" id ="con">
+            <div class = "porter">
+                <div class = "item port" id = "rood-port" onclick="gul(this)"> <img src = "/verkstedet/Bilder/portRood.jpg"> </div>
+                <div class = "item port" id = "grnn-port" onclick="gul(this)"> <img src = "/verkstedet/Bilder/portGrn.jpg">  </div>
+                <div class = "item port" id = "blaa-port" onclick="gul(this)"> <img src = "/verkstedet/Bilder/portBlaa.jpg">  </div>
+            </div>
+
+            <div class = "ledninger">
+                <div class = "item wire" id = "blaa-ledning" onclick="gul(this)"> <img src = "/verkstedet/Bilder/ledningBlaa.jpg"> </div>
+                <div class = "item wire" id = "rood-ledning" onclick="gul(this)"> <img src = "/verkstedet/Bilder/ledningRood.jpg"> </div>
+                <div class = "item wire" id = "grnn-ledning" onclick="gul(this)"> <img src = "/verkstedet/Bilder/ledningGrn.jpg">  </div>
+            </div> 
+        </div> 
+        <div class = "container" id = "boks">
+            <p> Du fiksa gavemaskinen! </p>
+            <button id ="navigateButton"> Neste oppgave </button>
+        </div>
+
+        <script>  
+            document.getElementById("navigateButton").addEventListener("click", function() {
+                window.location.href = "/labyrint/";
+            });
+            
+            let foorste = true;
+            let id1 = "";
+            let id2 = "";
+            let antall = 0; 
+
+            function gul(element) {
+                element.classList.add('highlight'); // Legger til highlight på det klikkede elementet
+                if(foorste) {
+                    foorste = false
+                    id1 = element.id
+                    console.log(id1) 
+                }
+                else {
+                    id2 = element.id
+                    console.log(id2)
+                    foorste = true 
+                    if(id1.substr(0,4) === id2.substr(0,4)) {
+                        antall ++
+                        if(antall === 3) {
+                            document.getElementById("boks").style.display = "block"; 
+                            document.getElementById("con").style.display = "none";
+                            document.getElementById("overskrift").style.display = "none"; 
+                        }
+                    }
+                    else {
+                        const items = document.querySelectorAll('.item'); // Fjerner highlight fra alle elementer
+                        items.forEach(item => item.classList.remove('highlight'));
+                        antall = 0 
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

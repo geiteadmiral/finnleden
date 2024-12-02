@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("/labyrint/media/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#maze {
+    position: relative;
+    width: 90vw;
+    max-width: 400px;
+    height: 90vw;
+    max-height: 400px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    border: 5px solid #b30d9a;
+    display: grid;
+}
+
+#mazeContainer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timer {
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline
+}
+
+.player,
+.finish {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 1%;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.player {
+    background-image: url("/labyrint/media/santa.png");
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.finish {
+    background-image: url("/labyrint/media/sledge.png");
+    grid-column: 15;
+    grid-row: 15;
+}
+
+.wall {
+    background-color: #b8006b;
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 2px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3px;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.6rem;
+}
+
+.box {
+    background-color: rgb(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 5px 10px;
+    max-width: 1000px;
+
+}
+
+.box img {
+    max-width: 300px;
+    width: 100%;
+}
+
+#shortBreak {
+    display: none;
+}
+
+button {
+    background-color: #b30d9a;
+    color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: yellow;
+    color: #333;
+}
+
+#gameOver {
+    display: none;
+}
+
+#youWon {
+    display: none;
+}
+
+#revolution {
+    display: none;
+}
+
+#controls {
+    display: none;
+    grid-template-areas:
+        ". up up ."
+        "left down down right";
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#up {
+    grid-area: up;
+}
+
+#left {
+    grid-area: left;
+}
+
+#down {
+    grid-area: down;
+}
+
+#right {
+    grid-area: right;
+}
+
+#controls button {
+    font-size: 2.3rem;
+    width: 60px;
+    font-weight: 900;
+}
+
+#infoText {
+    text-align: center;
+}
+
+@media (hover: none){
+    #controls {
+        display: grid;
+    }
+}

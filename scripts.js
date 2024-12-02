@@ -1,1 +1,3 @@
-/* Place your JavaScript in this file */
+function startGame (){
+    window.location = "/kontoret"
+}

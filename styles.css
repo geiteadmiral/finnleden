@@ -1,7 +1,94 @@
-/* Place your CSS styles in this file */
+/* Fikser kropp og video */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url('/media/image.png');
+}
 
-h1 {
+.video-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Video tilpasset skjermen */
+#background-video {
+    position: absolute;
+    margin-top: 100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Header for "Luke 12" */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
     text-align: center;
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: normal;
+    padding: 10px 0;
+    z-index: 1; /* Plasserer header over alt annet */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Myk skygge */
+}
+
+/* Hovedinnhold */
+.content {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    top: 20%;
+    z-index: 1;
+    font-family: 'Arial', sans-serif;
+    background-color: transparent; /* Sikrer at bakgrunnen ikke har en farge */
+
+}
+
+/* Beskrivelsen i boksen */
+.content h2 {
+    background-color: rgba(5, 100, 34, 0.6);    
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #f1f1f1;
+    margin: 10px auto;
+    max-width: 90%;
+}
+
+/* Overskriften */
+.content h1 {
+    font-size: 32px;
+    color: black;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px green;
+
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: red;
+    color: white;
+    border: none;
+    width: 25%;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #8b2304;
 }

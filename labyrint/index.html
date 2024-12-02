@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dag 12 - Labyrint </title>
+    <link rel="stylesheet" href="/labyrint/styles.css" />
+    <link rel="icon" type="image/x-icon" href="/media/ikon.png">
+</head>
+
+<body>
+    <div id="menu" class="box">
+        <h2>Nesten der!</h2>
+        <p>
+            Gavemaskinen er fikset, da mangler du bare å komme deg til sleden. Du
+            kan se den horisonten, men den er på den andre siden av en labyrint!
+        </p>
+        <figure>
+            <img src="/labyrint/media/ai.png"
+                alt="Julenissen som ser på sleden sin som er på den andre siden av en lilla labyrint" />
+            <figcaption>
+                <a href="https://chatgpt.com/">&copy;Bilde generert av ChatGPT</a>
+            </figcaption>
+        </figure>
+        <p>Hjelp julenissen med å komme seg igjennom labyrinten. Ikke bruk for lang tid, da kommer han ikke frem i tide.
+        </p>
+        <button onclick="startGame()">Gå igjennom labyrinten</button>
+        <button onclick="shortBreak()">Hvil litt først</button>
+        <button onclick="revolution(this)">
+            Glem det, barna trenger ikke gaver i år
+        </button>
+    </div>
+
+    <div id="gameOver" class="box">
+        <h2>For sent!</h2>
+        <p>
+            Du brukte for lang tid på å komme deg igjennom labyrinten at julenissen ikke rekker å søke visum til å komme
+            seg til alle landene før gavene skal leveres.
+        </p>
+        <p>
+            Men ikke beskymre deg. Alvene har utviklet en helt ny teknologi:
+            <em>en tidsmaskin</em>.
+        </p>
+        <figure>
+            <img src="/labyrint/media/tidsmaskin.jpg" alt="bilde av en tidsmaskin" />
+            <figcaption>
+                <a
+                    href="https://www.freepik.com/free-photo/clock-mechanism-made-technique-toning-very-shallow-depth-field-focus-central-gears_1170607.htm#fromView=search&page=1&position=10&uuid=703627b2-a19e-4491-86da-5934245de17d">&copy;Bilde
+                    av onlyyouqj på Freepik</a>
+            </figcaption>
+        </figure>
+        <p>Bruk den til å prøve igjen, og vær raskere denne gangen.</p>
+        <button onclick="timeTravel()">Bruk tidsmaskinen</button>
+    </div>
+
+    <div id="youWon" class="box">
+        <h2>Du vant!</h2>
+        <p>Du klarte å komme til sleden i tide. Nå må du bare starte den.</p>
+        <a href="/sluttside"><button>Videre</button></a>
+    </div>
+
+    <div id="revolution" class="box">
+        <h2>Ops... ingen gaver?</h2>
+        <p>Det var ikke veldig populært.</p>
+        <p>
+            Barna hater julenissen så mye at de startet en revolusjon for å ta ned
+            ledelsen på Nordpolen.
+        </p>
+        <figure>
+            <img src="/labyrint/media/onp.png" alt="rød bakrunn med grønn hånd. det stå occupy north pole by darren j seeley ">
+            <figcaption><a href="https://www.scriptrevolution.com/scripts/onp-occupy-north-pole">&copy;Cover til Occupy North Pole av Darren J Seeley</a></figcaption>
+        </figure>
+        <p>
+            Heldigvis har alvene utviklet en helt ny teknologi:
+            <em>en tidsmaskin</em>. Bruk den til å ta bedre valg.
+        </p>
+        <button onclick="timeTravel()">Bruk tidsmaskinen</button>
+    </div>
+
+    <div id="shortBreak" class="box">
+        <h2>Du tok en pause!</h2>
+        <figure>
+            <img src="/labyrint/media/kakao.jpg" />
+            <figcaption>
+                <a
+                    href="https://www.freepik.com/free-photo/one-woman-holding-coffee-cup-enjoying-warmth-generated-by-ai_41470371.htm#fromView=search&page=1&position=10&uuid=445e7c2c-ae0d-4fef-9b4a-42a552439686">&copy;Bilde
+                    av vecstock på Freepik</a>
+            </figcaption>
+        </figure>
+        <p>
+            Du tok en kort kakaopause for å hvile deg, men pass deg, nå har du litt
+            <em>dårlig tid</em>! Du må løpe, og har dermed halvparten så mye tid på å komme deg igjennom labyrinten.
+        </p>
+        <button onclick="startGame()">Gå igjennom labyrinten</button>
+    </div>
+
+    <div id="mazeContainer">
+        <div id="timer">00 sekunder igjen!</div>
+
+        <div id="maze">
+            <div class="player" id="player"></div>
+            <div class="finish" id="finish"></div>
+        </div>
+
+        <div id="controls">
+            <button id="up">↑</button>
+            <button id="left">←</button>
+            <button id="down">↓</button>
+            <button id="right">→</button>
+        </div>
+
+        <p id="infoText">Bruk piltastene for å bevege julenissen.</p>
+    </div>
+
+    <footer>
+        <a
+            href="https://www.freepik.com/free-photo/top-view-little-presents-with-toys_16997653.htm#fromView=search&page=1&position=1&uuid=831fe43c-2b0a-477b-9287-00b60e729877">&copy;Bakgrunnbilde
+            av KamranAydinov på Freepik</a>
+        <a
+            href="https://www.freepik.com/free-vector/smiley-santa-claus-cartoon-face-illustration_77993007.htm#fromView=search&page=1&position=0&uuid=42d58fc5-3468-48b7-a8de-4fb2316da46b">&copy;
+            Bilde av julenissen av brgfx på Freepik</a>
+        <a
+            href="https://www.freepik.com/free-vector/santa-sleigh-with-gifts-with-red-sled-with-ornaments_14742588.htm#fromView=keyword&page=1&position=14&uuid=05dd4fa6-0a37-4afd-ba85-d8c5baf33772">&copy;
+            Bilde av slede av macrovector på Freepik</a>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
