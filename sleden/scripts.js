@@ -102,7 +102,7 @@ function help(){
 
 function beg(){
     document.querySelector("#elf").style.display = "flex"
-    document.querySelector("#begBtn").innerHTML = "<a href='https://julekalender2024.w3spaces.com/Sluttside/Sluttside.html'><button>Til sluttskjermen</button></a>"
+    document.querySelector("#begBtn").innerHTML = "<a href='/sluttside'><button>Til sluttskjermen</button></a>"
 
     let buttons = document.querySelectorAll("button");
     buttons.forEach(button => button.disabled = true);
