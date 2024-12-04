@@ -17,8 +17,8 @@
             Nå mangler det bare å få sleden i gang. Dessverre er reinsdyrene så late at de ikke får til å fly
             på egenhånd. Derfor har alvene lagt til en motor på sleden, som desverre ikke fungerer veldig bra.
         </p>
-        <figure>
-            <img id="deer" src="/sleden/media/deer.jpg" alt="Tegning av julenissen på sleden sin med reinsdyr foran">
+        <figure id="deer">
+            <img  src="/sleden/media/deer.jpg" alt="Tegning av julenissen på sleden sin med reinsdyr foran">
             <figcaption>
                 <a href="https://www.freepik.com/free-vector/cute-deer-white-background_24466863.htm#fromView=keyword&page=1&position=0&uuid=0c695cb3-b633-44ca-9d28-f12876d0b20e">&copy;Bilde
                     av brgfx på Freepik</a>
@@ -29,6 +29,7 @@
         </p>
 
         <button onclick="startGame()" id="startBtn">Start</button>
+        <button onclick="help()">Nei, la en alv gjøre det</button>
 
         <div id="progressGame">
             <p id="progressCountdown">5</p>
@@ -70,14 +71,15 @@
 
     <div id="help" class="box" style="display: none;">
         <h2>Spør om hjelp!</h2>
-        <p>Be alven så pent (eller lite pent) du ønsker om hjelp.</p>
+        <p>Be alven veldig pent om hjelp.</p>
+        <p>Husk det magiske ordet!</p>
         <div id="beg">
             <div>
                 <img src="/labyrint/media/santa.png"/>
                 <textarea id="helpInput" placeholder="Skriv noe..." ></textarea>
             </div>
             <div id="elf" style="display: none;">
-                <p>Selvfølgelig, store leder. <br> <br> <em>trykker på knappen</em></p>
+                <p id="elfAnswer"></p>
                 <img src="/sleden/media/elf.png" alt="">
             </div>
         </div>

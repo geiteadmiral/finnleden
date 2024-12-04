@@ -89,6 +89,7 @@ function youWon(){
 
 function help(){
     document.querySelector("#gameOver").style.display = "none"
+    document.querySelector("#menu").style.display = "none"
     document.querySelector("#help").style.display = "block"
 
     let buttons = document.querySelectorAll("button");
@@ -101,14 +102,36 @@ function help(){
 }
 
 function beg(){
-    document.querySelector("#elf").style.display = "flex"
-    document.querySelector("#begBtn").innerHTML = "<a href='/sluttside'><button>Til sluttskjermen</button></a>"
+    let input = document.querySelector("#helpInput")
 
-    let buttons = document.querySelectorAll("button");
-    buttons.forEach(button => button.disabled = true);
+    function getRandom (list) {
+        return list[Math.floor((Math.random()*list.length))];
+      }
 
+    let elfAnswerList = ["Jeg liker ikke måten du snakker til meg på. Hvorfor tråkker du alltid på meg? Prøv igjen.",
+        "Spør meg igjen. Med respekt. Jeg er så lei.", 
+        "Lærte du ikke hva det magiske ordet er i barnehagen? Spør meg igjen.",
+        "Jeg kommer til å gråte. Seriøst. Jeg kan gjøre hva som helst for deg, men spør meg hyggelig.",
+        "Over mitt lik om du ikke spør meg på en hyggelig måte."]
 
-    setTimeout(() => {
-        buttons.forEach(button => button.disabled = false);
-    }, 1000);
+    if (((input.value.includes("vær") || input.value.includes("være") || input.includes("er")) && input.value.includes("snill")) || (input.value.includes("please") || input.value.includes("pls")))  {
+        document.querySelector("#elf").style.display = "flex"
+        document.querySelector("#elfAnswer").innerHTML = "Selvfølgelig, store leder. <br> <br> <em>trykker på knappen</em>"
+        document.querySelector("#begBtn").innerHTML = "<a href='/sluttside'><button>Til sluttskjermen</button></a>"
+    } else {
+        document.querySelector("#elf").style.display = "flex"
+        document.querySelector("#elfAnswer").innerText = getRandom(elfAnswerList)
+    }
+
+    
 }
+
+
+//hindre klikking ved et uhell før man har hatt mulighet til å lese teksten 
+let buttons = document.querySelectorAll("button");
+buttons.forEach(button => button.disabled = true);
+
+
+setTimeout(() => {
+    buttons.forEach(button => button.disabled = false);
+}, 500);

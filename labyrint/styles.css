@@ -122,10 +122,6 @@ button {
     margin: 5px;
 }
 
-button:hover {
-    background-color: yellow;
-    color: #333;
-}
 
 #gameOver {
     display: none;
