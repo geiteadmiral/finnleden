@@ -164,7 +164,7 @@ function showScreen(elementId, displayType) {
 
     setTimeout(() => {
         buttons.forEach(button => button.disabled = false);
-    }, 1000);
+    }, 500);
 }
 
 

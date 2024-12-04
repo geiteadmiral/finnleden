@@ -98,7 +98,7 @@ function help(){
 
     setTimeout(() => {
         buttons.forEach(button => button.disabled = false);
-    }, 1000);
+    }, 500);
 }
 
 function beg(){
@@ -123,15 +123,15 @@ function beg(){
         document.querySelector("#elfAnswer").innerText = getRandom(elfAnswerList)
     }
 
+    //hindre klikking ved et uhell før man har hatt mulighet til å lese teksten 
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach(button => button.disabled = true);
+
+
+    setTimeout(() => {
+        buttons.forEach(button => button.disabled = false);
+    }, 500);
+
     
 }
 
-
-//hindre klikking ved et uhell før man har hatt mulighet til å lese teksten 
-let buttons = document.querySelectorAll("button");
-buttons.forEach(button => button.disabled = true);
-
-
-setTimeout(() => {
-    buttons.forEach(button => button.disabled = false);
-}, 500);
