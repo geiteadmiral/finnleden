@@ -114,7 +114,7 @@ function beg(){
         "Jeg kommer til å gråte. Seriøst. Jeg kan gjøre hva som helst for deg, men spør meg hyggelig.",
         "Over mitt lik om du ikke spør meg på en hyggelig måte."]
 
-    if (((input.value.includes("vær") || input.value.includes("være") || input.includes("er")) && input.value.includes("snill")) || (input.value.includes("please") || input.value.includes("pls")))  {
+    if (((input.value.includes("vær") || input.value.includes("være") || input.value.includes("er")) && input.value.includes("snill")) || (input.value.includes("please") || input.value.includes("pls") || input.value.includes("plis")))  {
         document.querySelector("#elf").style.display = "flex"
         document.querySelector("#elfAnswer").innerHTML = "Selvfølgelig, store leder. <br> <br> <em>trykker på knappen</em>"
         document.querySelector("#begBtn").innerHTML = "<a href='/sluttside'><button>Til sluttskjermen</button></a>"
