@@ -18,7 +18,7 @@ let gridSize = 15;
 let position = {x: 1, y: 1};
 let timer;
 let haveRested = false;
-let timeLeft = 50;
+let timeLeft = 30;
 let held = false;
 
 //lag labyrinten -----------------------------------
@@ -74,9 +74,9 @@ function startGame() {
 
     //bestem hvor lang tid man har på labyrinten avhengig av om man har hvilt
     if (haveRested) {
-        timeLeft = 25;
+        timeLeft = 15;
     } else {
-        timeLeft = 50;
+        timeLeft = 30;
     }
 
     //tell ned hvert sekund
