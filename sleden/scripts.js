@@ -113,7 +113,8 @@ function beg(){
         "Spør meg igjen. Med respekt. Jeg er så lei.", 
         "Lærte du ikke hva det magiske ordet er i barnehagen? Spør meg igjen.",
         "Jeg kommer til å gråte. Seriøst. Jeg kan gjøre hva som helst for deg, men spør meg hyggelig.",
-        "Over mitt lik om du ikke spør meg på en hyggelig måte."]
+        "Over mitt lik om du ikke spør meg på en hyggelig måte.",
+        "Er det sånn man snakker med en liten alv? Tror ikke det, nei."]
 
     if (input.value.includes("snill") || input.value.includes("takk") || input.value.includes("please") || input.value.includes("pls") || input.value.includes("plis"))  {
         document.querySelector("#elf").style.display = "flex"
