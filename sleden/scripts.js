@@ -116,7 +116,7 @@ function beg(){
         "Over mitt lik om du ikke spør meg på en hyggelig måte.",
         "Er det sånn man snakker med en liten alv? Tror ikke det, nei."]
 
-    if (input.value.includes("snill") || input.value.includes("takk") || input.value.includes("please") || input.value.includes("pls") || input.value.includes("plis"))  {
+    if (input.value.toLowerCase().includes("snill") || input.value.toLowerCase().includes("takk") || input.value.toLowerCase().includes("please") || input.value.toLowerCase().includes("pls") || input.value.toLowerCase().includes("plis"))  {
         document.querySelector("#elf").style.display = "flex"
         document.querySelector("#elfAnswer").innerHTML = "Selvfølgelig, store leder. <br> <br> <em>trykker på knappen</em>"
         document.querySelector("#begBtn").innerHTML = "<a href='/sluttside'><button>Til sluttskjermen</button></a>"
